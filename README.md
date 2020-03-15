@@ -1,6 +1,6 @@
 # demo
 
-> [demo](https://git.yasinchan.com/vue-verification-input/dist/)
+> [demo](http://git.yasinchan.com/vue-verification-input/dist/)
 
 > [master](https://github.com/YasinChan/vue-verification-input/tree/master)
 
