@@ -5,7 +5,7 @@
         ref="codeInput"
         v-model="code"
         class="verification-code__input"
-        type="tel"
+        :type="type"
         onselectstart="return false;"
     />
     <table class="verification-code__box" :style="{ borderSpacing: itemMargin }" @click="triggerInput">
@@ -27,6 +27,10 @@
     props: {
       maxLength: {
         default: 6
+      },
+      type: {
+        default: 'tel',
+        type: String
       },
       wrong: {
         type: Boolean,
@@ -52,6 +56,7 @@
     data() {
       return {
         code: '',
+        lock: false,
         itemList: new Array(Number(this.maxLength))
       }
     },
@@ -60,22 +65,23 @@
         if (newVal.length === Number(this.maxLength)) {
           this.endCallback()
         }
-
         if (newVal.length > oldVal.length) {
+          this.lock = false
           const valArr = newVal.split('')
           for (let i = 0; i < valArr.length; i++) {
             this.itemList[i] = valArr[i]
           }
-        } else if (newVal !== '' || oldVal.length === 1) {
+        } else if ((newVal !== '' || oldVal.length === 1) && !this.lock) {
+          this.lock = true
           this.itemList = new Array(Number(this.maxLength))
           this.code = ''
-          this.deleteCallback()
+          this.deleteCallback(oldVal)
         }
       }
     },
     methods: {
-      deleteCallback() {
-        this.$emit('deleteEvent', this.code)
+      deleteCallback(val) {
+        this.$emit('deleteEvent', val)
       },
       triggerInput() {
         this.$refs.codeInput.focus()
