@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <h1>vue-verification-input</h1>
+    <a href="https://github.com/YasinChan/vue-verification-input/tree/gh-pages">演示源码</a>
+    <a href="https://github.com/YasinChan/vue-verification-input/tree/master">主仓库</a>
+    <a href="https://www.npmjs.com/package/vue-verification-input">NPM</a>
     <div class="fixed">
       <div>
         <span>删除回调</span>
@@ -18,7 +22,7 @@
         <span>{{ finishCode }}</span>
       </div>
     </div>
-    <h1>默认样式</h1>
+    <h2>默认样式</h2>
     <verificationCodeInput
         :wrong="verifyCodeWrong"
         @deleteEvent="deleteEvent"
@@ -27,7 +31,7 @@
     <span :style="{ color: verifyCodeWrong ? 'red' : '' }">{{ remind }}</span>
     <pre style="text-align: left;" v-highlightjs="sourcecode1"><code class=""></code></pre>
 
-    <h1>自定义样式</h1>
+    <h2>自定义样式</h2>
     <verificationCodeInput
         :wrong="verifyCodeWrong2"
         type="text"
@@ -172,6 +176,12 @@
     color: #2c3e50;
     max-width: 960px;
     margin: 0 auto;
+  }
+  a {
+    color: #409eff;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
   }
   h1 {
     margin: 20px 0 10px;
