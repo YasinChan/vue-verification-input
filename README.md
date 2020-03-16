@@ -63,7 +63,7 @@ $ npm i vue-verification-input -S
    ```css
    // item-class item-active-class item-wrong-class 的默认样式
    .item-class {
-    	height: 50px;
+     height: 50px;
      width: 40px;
      border: 1px solid #f8f8f8;
      background: #f8f8f8;
