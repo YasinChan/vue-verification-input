@@ -11,7 +11,8 @@
     "core-js": "^3.6.4",
     "highlight.js": "^9.18.1",
     "vue": "^2.6.11",
-    "vue-highlightjs": "^1.3.3"
+    "vue-highlightjs": "^1.3.3",
+    "vue-verification-input": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",

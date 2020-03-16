@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <div>
-      <span>删除回调</span>
-      <span>{{ deleteNum }}</span>
-    </div>
-    <div>
-      <span>完成回调</span>
-      <span>{{ finishNum }}</span>
+    <div class="fixed">
+      <div>
+        <span>删除回调</span>
+        <span>{{ deleteNum }}</span>
+      </div>
+      <div>
+        <span>删除前的值</span>
+        <span>{{ deleteCode }}</span>
+      </div>
+      <div>
+        <span>完成回调</span>
+        <span>{{ finishNum }}</span>
+      </div>
+      <div>
+        <span>完成时的值</span>
+        <span>{{ finishCode }}</span>
+      </div>
     </div>
     <h1>默认样式</h1>
     <verificationCodeInput
@@ -14,12 +24,13 @@
         @deleteEvent="deleteEvent"
         @finishEvent="finishEvent"
     />
-    <span>{{ remind }}</span>
+    <span :style="{ color: verifyCodeWrong ? 'red' : '' }">{{ remind }}</span>
     <pre style="text-align: left;" v-highlightjs="sourcecode1"><code class=""></code></pre>
 
     <h1>自定义样式</h1>
     <verificationCodeInput
         :wrong="verifyCodeWrong2"
+        type="text"
         item-class="item-class"
         max-length="4"
         item-margin="20px 10px"
@@ -47,7 +58,9 @@
         verifyCodeWrong: false,
         verifyCodeWrong2: false,
         deleteNum: 0,
+        deleteCode: '',
         finishNum: 0,
+        finishCode: '',
         sourcecode1:
             '<template>\n' +
             '  <verificationCodeInput\n' +
@@ -124,22 +137,26 @@
       }
     },
     methods: {
-      deleteEvent() {
+      deleteEvent(code) {
         this.deleteNum += 1
+        this.deleteCode = code
         this.remind = '请输入验证码'
         this.verifyCodeWrong = false
       },
-      finishEvent() {
+      finishEvent(code) {
         this.finishNum += 1
+        this.finishCode = code
         this.remind = '验证码输入错误'
         this.verifyCodeWrong = true
       },
-      deleteEvent2() {
+      deleteEvent2(code) {
         this.deleteNum += 1
+        this.deleteCode = code
         this.verifyCodeWrong2 = false
       },
-      finishEvent2() {
+      finishEvent2(code) {
         this.finishNum += 1
+        this.finishCode = code
         this.verifyCodeWrong2 = true
       }
     }
@@ -177,5 +194,18 @@
     border: 1px solid #e6a23c;
     color: #fff;
     background: #e6a23c;
+  }
+  .fixed {
+    position: fixed;
+    right: 10px;
+    text-align: left;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 190px;
+    background: rgba(0, 0, 0 ,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
   }
 </style>
