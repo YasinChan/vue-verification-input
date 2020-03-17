@@ -1,6 +1,6 @@
 # vue-verification-input
 
-> 方形验证码框
+> 方形验证码框 支持快速粘贴
 
 ## 链接
 
