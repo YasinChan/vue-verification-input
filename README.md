@@ -20,7 +20,7 @@ $ npm i vue-verification-input -S
    ```js
    import Vue from 'vue'
    import VerificationCodeInput from 'vue-verification-input'
-   Vue.component('VueInputCode', VerificationCodeInput)
+   Vue.component('VerificationCodeInput', VerificationCodeInput)
    ```
 
 2. 局部组件
@@ -37,7 +37,7 @@ $ npm i vue-verification-input -S
 3. template
 
    ```html
-   <verificationCodeInput
+   <VerificationCodeInput
        :wrong="[Boolean]"
        :type="[String]"
        :item-class="[String]"
