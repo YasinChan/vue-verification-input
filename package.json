@@ -1,6 +1,6 @@
 {
   "name": "vue-verification-input",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A input for verification code",
   "main": "index.js",
   "author": "Yasinchan",
