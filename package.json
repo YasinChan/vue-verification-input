@@ -9,6 +9,9 @@
     "build": "rollup -c rollup.config.js",
     "watch": "rollup -c rollup.config.js --watch"
   },
+  "resolutions": {
+    "acorn": "^7.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YasinChan/vue-verification-input.git"
