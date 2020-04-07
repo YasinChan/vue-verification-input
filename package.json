@@ -10,7 +10,8 @@
     "watch": "rollup -c rollup.config.js --watch"
   },
   "resolutions": {
-    "acorn": "^7.1.1"
+    "acorn": "^7.1.1",
+    "kind-of": "^6.0.3"
   },
   "repository": {
     "type": "git",
