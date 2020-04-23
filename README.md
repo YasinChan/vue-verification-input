@@ -37,7 +37,7 @@ $ npm i vue-verification-input -S
 3. template
 
    ```html
-   <VerificationCodeInput
+   <verification-code-input
        :wrong="[Boolean]"
        :type="[String]"
        :item-class="[String]"
@@ -47,7 +47,7 @@ $ npm i vue-verification-input -S
        :item-wrong-class="[String]"
        @deleteEvent="deleteEvent"
        @finishEvent="finishEvent"
-   />
+   ></verification-code-input>
    ```
 
    | Props             | 描述                           | 默认值 | 必须/可选 |
