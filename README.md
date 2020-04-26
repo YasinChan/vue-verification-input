@@ -1,11 +1,11 @@
 # vue-verification-input
+[![vue-verification-input](https://img.shields.io/badge/vue--verification--input-1.0.5-brightgreen)](https://www.npmjs.com/package/vue-verification-input)
 
 > 方形验证码框 支持快速粘贴
 
-## 链接
+## 演示
 
-**[demo](https://git.yasinchan.com/vue-verification-input/dist/)**
-**[npm](https://www.npmjs.com/package/vue-verification-input)**
+**[演示](https://git.yasinchan.com/vue-verification-input/dist/)**
 
 ## 用法
 
